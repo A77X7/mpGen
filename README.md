@@ -18,6 +18,7 @@ In addition planned, as a by-product, mpGen can convert text objects in MIF to p
 At this time supported limited kinds of objects in MIF (points, lines, polylines, regions, texts) to convert to MP/PFM.
 
 # Usage from command line (terminal)
+
 mpGen.exe <options>
 options are:
 
