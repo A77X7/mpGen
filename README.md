@@ -63,12 +63,21 @@ ogr2ogr.exe -skipfailures -t_srs ""EPSG:4326"" -f ""MapInfo File"" D:\\tmp\\dstw
 
 # Sources
 geometry.cs contains abstract geometry class for internal representation.
+
 geometryPoint.cs contains descendant of geometry for points.
+
 geometryPolyline.cs contains descendant of geometry for polylines.
+
 geometryPolygon.cs contains descendant of geometry for polygons.
+
 coordinate.cs contains representation of coordinate (x, y).
+
 header.cs contains MP/PFM header part.
+
 mpFile.cs contains representation of MP/PFM file (header + geometry collection).
+
 mifParser.cs contains static methods to parse MIF files.
+
 pgParser.cs contains static methods to parse WKT from PostgreSQL.
+
 Program.cs contains main entry point with multithreaded processing.
