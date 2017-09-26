@@ -19,46 +19,47 @@ At this time supported limited kinds of objects in MIF (points, lines, polylines
 
 # Usage from command line (terminal)
 
-mpGen.exe <options>
+mpGen.exe \<options\>
+
 options are:
 
-silent <true|false>
+silent \<true|false\>
 Silent mode. If true, no messages will be written to console. Optional. Default is false
 
-append <true|false>
+append \<true|false\>
 If true, file will be appended with new data. Usable for combine number of sources to one destination. Optional. Default is false
 
-mpDestination <filepath>
+mpDestination \<filepath\>
 Path to destination .mp-file. Required
 
-mifSource <filepath>
+mifSource \<filepath\>
 Path to source MapInfo .mif-file. Required if no pgXXX options
 
-pgConnectionString <string>
+pgConnectionString \<string\>
 Connection string to PostgreSQL database. Required if no mifXXX options
 
-pgQuery <string>
+pgQuery \<string\>
 SQL query to PostgreSQL database returning table of geometry primitives and may be it's labels. Required if no mifXXX options
 
-pgFieldNameGeometryWkt <string>
+pgFieldNameGeometryWkt \<string\>
 Field name with WKT in table which is result of SQL query (see pgQuery option). Required if no mifXXX options
 
-pgFieldNameLabel <string>
+pgFieldNameLabel \<string\>
 Field name with label in table which is result of SQL query (see pgQuery option). Optional
 
-reprojectGeoServerUrl <string>
+reprojectGeoServerUrl \<string\>
 Url to GeoServer WPS. For example, http://gis1:8080/geoserver/wps. Optional
 
-reprojectGeoServerUser <string>
+reprojectGeoServerUser \<string\>
 User name on GeoServer. Required for reprojectGeoServerUrl option
 
-reprojectGeoServerPassword <string>
+reprojectGeoServerPassword \<string\>
 User password on GeoServer. Required for reprojectGeoServerUrl option
 
-reprojectSourceSrs <string>
+reprojectSourceSrs \<string\>
 Source coordinate system to reproject from. For example, EPSG:28413. Required for reprojectGeoServerUrl option
 
-reprojectTargetSrs <string>
+reprojectTargetSrs \<string\>
 Target coordinate system to reproject to. Optional. Default is "EPSG:4326"
 
 Recomended to use WGS 84 coordinate system only. You have to reproject source MIF/WKT before convert it to MP/PFM by this tool or use reprojectGeoServerUrl option. Use GDAL/OGR to reproject. For example:
