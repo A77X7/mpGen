@@ -63,7 +63,7 @@ reprojectTargetSrs \<string\>
 Target coordinate system to reproject to. Optional. Default is "EPSG:4326"
 
 Recomended to use WGS 84 coordinate system only. You have to reproject source MIF/WKT before convert it to MP/PFM by this tool or use reprojectGeoServerUrl option. Use GDAL/OGR to reproject. For example:
-ogr2ogr.exe -skipfailures -t_srs ""EPSG:4326"" -f ""MapInfo File"" D:\\tmp\\dstw84.MIF D:\\tmp\\src.tab");
+ogr2ogr.exe -skipfailures -t_srs "EPSG:4326" -f "MapInfo File" D:\\tmp\\dstw84.MIF D:\\tmp\\src.tab
 
 # Sources
 geometry.cs contains abstract geometry class for internal representation.
