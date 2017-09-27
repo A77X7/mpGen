@@ -161,7 +161,7 @@ ogr2ogr.exe -skipfailures -t_srs ""EPSG:4326"" -f ""MapInfo File"" D:\\tmp\\dstw
                 {
                     if (srcType == sourceType.MIF)
                     {
-                        mifParser.parse(mifSource, mp);
+                        mifParser.parse(mifSource, mp.geometries);
                     }
                     else if (srcType == sourceType.PostgreSQL)
                     {

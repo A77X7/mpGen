@@ -13,15 +13,15 @@ namespace mpGen
         //public static String lineSepeartor = "\r\n";
         public static String delimiter = "\t";
 
-        public static void parse(String fileNameSource, mpFile mpFileDestination)
+        public static void parse(String fileNameSource, List<geometry> geometries)
         {
             using (var stream = new FileStream(fileNameSource, FileMode.Open, FileAccess.Read))
             {
-                parse(stream, mpFileDestination);
+                parse(stream, geometries);
             }
         }
 
-        public static void parse(Stream streamSource, mpFile mpFileDestination)
+        public static void parse(Stream streamSource, List<geometry> geometries)
         {
             using (var reader = new StreamReader(streamSource))
             {
@@ -52,7 +52,7 @@ namespace mpGen
                                     //так долго
                                     lock (Program.mpLock)
                                     {
-                                        mpFileDestination.geometries.AddRange(geom);
+                                        geometries.AddRange(geom);
                                     }
                                 }
                                 lastGeometryBlock.Clear();
@@ -84,7 +84,7 @@ namespace mpGen
                         //так долго
                         lock (Program.mpLock)
                         {
-                            mpFileDestination.geometries.AddRange(geom);
+                            geometries.AddRange(geom);
                         }
                     }
                     lastGeometryBlock.Clear();
@@ -263,6 +263,13 @@ namespace mpGen
                 }
             }
             return retval;
+        }
+
+        static coordinate getTextCenter(Double x1, Double y1, Double x2, Double y2, Double angleDegrees)
+        {
+            var x = x1 + (x2 - x1) / 2;
+            var y = y1 + (y2 - y1) / 2;
+
         }
     }
 }
